@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 @Transactional
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
-
+    Employee findByName(String name);
 }

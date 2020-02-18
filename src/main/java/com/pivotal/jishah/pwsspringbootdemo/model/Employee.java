@@ -12,6 +12,12 @@ import javax.persistence.*;
 @Table(name = "employee")
 public class Employee {
 
+    public Employee(String name, String department, String city) {
+        this.name = name;
+        this.city = city;
+        this.department = department;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
