@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_a04a3c356f94520
+    dbcp2:
+      test-on-borrow: true
+      validation-query: SELECT 1
+    password: 4bfa0b33
+    username: b67144fb792c2e
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: false
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
