@@ -5,6 +5,8 @@ image_resource:
   source: {repository: maven}
 inputs:
 - name: git-repo
+outputs:
+- name: build-output
 
 run:
   path: /bin/sh

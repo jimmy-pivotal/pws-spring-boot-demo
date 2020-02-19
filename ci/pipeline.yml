@@ -35,3 +35,4 @@ jobs:
     - put: deploy-cf
       params:
         manifest: git-repo/manifest.yml
+        path: build-output/*.jar
