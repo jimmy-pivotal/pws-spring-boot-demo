@@ -5,9 +5,19 @@ resources:
     branch: master
     uri: https://github.com/jimmy-pivotal/pws-spring-boot-demo.git
 
+- name: deploy-cf
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: {{USER_CF}}
+    password: {{PASSWORD_CF}}
+    organization: Canada
+    space: jishah
+    skip_cert_check: false
+
 jobs:
 - name: Unit Tests
-  public: false
+  public: true
   plan:
     - get: git-repo
       trigger: true
@@ -15,10 +25,13 @@ jobs:
       file: git-repo/ci/task_run_tests.yml
 
 - name: Build Project
-  public: false
+  public: true
   plan:
     - get: git-repo
       passed: [Unit Tests]
       trigger: true
     - task: Build Code
       file: git-repo/ci/task_buildcode.yml
+    - put: deploy-cf
+      params:
+        manifest: git-repo/manifest.yml
