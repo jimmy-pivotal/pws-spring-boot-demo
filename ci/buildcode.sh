@@ -2,4 +2,6 @@
 
 cd git-repo
 mvn clean package
-cp target/pws-spring-boot-demo*.jar ../artifacts/
+mkdir ../artifacts/
+chmod 755 ../artifacts/
+cp -p target/pws-spring-boot-demo*.jar ../artifacts/
