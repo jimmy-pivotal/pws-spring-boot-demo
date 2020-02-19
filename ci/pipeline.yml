@@ -14,7 +14,7 @@ jobs:
     - task: Run Unit Tests
       file: git-repo/ci/task_run_tests.yml
 
- - name: Build Project
+- name: Build Project
   public: false
   plan:
     - get: git-repo
