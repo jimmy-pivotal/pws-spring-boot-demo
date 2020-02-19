@@ -9,4 +9,5 @@ outputs:
 - name: artifacts
 
 run:
-  path: git-repo/ci/buildcode.sh
+  path: /bin/sh
+  args: ["git-repo/ci/buildcode.sh"]
