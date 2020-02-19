@@ -9,10 +9,10 @@ resources:
   type: cf
   source:
     api: https://api.run.pivotal.io
-    username: jishah@pivotal.io
-    password: ((PASSWORD_CF))
-    organization: Canada
-    space: jishah
+    username: ((CF_USERNAME))
+    password: ((CF_PASSWORD))
+    organization: ((CF_ORG))
+    space: ((CF_SPACE))
     skip_cert_check: false
 
 jobs:
