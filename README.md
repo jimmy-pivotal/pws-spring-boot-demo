@@ -29,3 +29,7 @@ fly --target tutorial sync
 
 6. Create pipeline using the below command <br /> 
 fly -t tutorial set-pipeline -c pipeline.yml -p pwd-spring-boot-demo -l credential.yml
+
+The pipeline looks like below:
+
+![image](https://user-images.githubusercontent.com/24946322/74952826-d0d1cc00-53ce-11ea-9ca3-50027cd31ce5.png)
