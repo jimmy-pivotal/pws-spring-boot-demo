@@ -1,4 +1,7 @@
+server:
+  port: 9090
 spring:
+#Data source
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_a04a3c356f94520
@@ -7,6 +10,13 @@ spring:
       validation-query: SELECT 1
     password: 4bfa0b33
     username: b67144fb792c2e
+#Health Actuator
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+# JPA
   jpa:
     hibernate.ddl-auto: none
     generate-ddl: false
