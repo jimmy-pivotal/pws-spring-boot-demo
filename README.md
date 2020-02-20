@@ -5,7 +5,9 @@ React and Spring-boot based employee application with CI/CD on concourse and dep
 In order to deploy your spring application onto CF, on should have access to PWS: https://console.run.pivotal.io/  <br />
 1. Run the below command which would refer to the manifest.yml file to push the application to CF <br />
 cf push 
-2. To restage the application after any changes, use the below command <br />
+2. Bind the application with an existing marketplace mySQL db: <br />
+cf bind-service <service 1>  <service 2>
+3. Restage the application after bind: <br />
 cf restage <APP_NAME>
 
 #### Concourse pipeline
