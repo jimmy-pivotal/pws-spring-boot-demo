@@ -1,26 +1,30 @@
 server:
   port: 9090
+
 spring:
 #Data source
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_a04a3c356f94520
-    dbcp2:
-      test-on-borrow: true
-      validation-query: SELECT 1
-    password: 4bfa0b33
-    username: b67144fb792c2e
-#Health Actuator
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
+datasource:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_a04a3c356f94520
+  dbcp2:
+    test-on-borrow: true
+    validation-query: SELECT 1
+  password: ""
+  username: b67144fb792c2e
 # JPA
-  jpa:
-    hibernate.ddl-auto: none
-    generate-ddl: false
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL55Dialect
+jpa:
+  hibernate.ddl-auto: none
+  generate-ddl: false
+  show-sql: true
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL55Dialect
+#Health
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
