@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pws-spring-boot-demo
+  name: employee-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pws-spring-boot-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: pws-spring-boot-demo
+    spec:
+      containers:
+      - image: jimmyshah83/pws-spring-boot-demo:docker-spring-boot-tag
+        name: pws-spring-boot-demo
+        resources: {}
+status: {}

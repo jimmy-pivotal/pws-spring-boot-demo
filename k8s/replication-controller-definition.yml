@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: employee-k8s
+  labels:
+    app: employee-k8s
+spec:
+  replicas: 3
+  selector:
+    app: employee-k8s
+  template:
+    metadata:
+      name: employee-k8s
+      labels:
+        app: employee-k8s
+    spec:
+      containers:
+        - name: employee-k8s
+          image: jimmyshah83/pws-spring-boot-demo:docker-spring-boot-tag
