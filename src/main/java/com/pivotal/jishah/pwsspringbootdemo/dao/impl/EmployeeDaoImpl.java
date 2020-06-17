@@ -2,6 +2,7 @@ package com.pivotal.jishah.pwsspringbootdemo.dao.impl;
 
 import com.pivotal.jishah.pwsspringbootdemo.dao.EmployeeDao;
 import com.pivotal.jishah.pwsspringbootdemo.model.Employee;
+import com.pivotal.jishah.pwsspringbootdemo.model.EmployeeDto;
 import com.pivotal.jishah.pwsspringbootdemo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,5 +35,15 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
+    }
+
+    @Override
+    public Employee save(EmployeeDto employeeDTO) {
+        Employee employee = Employee.builder()
+                .city(employeeDTO.getCity())
+                .department(employeeDTO.getDepartment())
+                .name(employeeDTO.getName())
+                .build();
+        return employeeRepository.save(employee);
     }
 }

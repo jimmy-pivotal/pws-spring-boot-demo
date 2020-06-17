@@ -1,6 +1,7 @@
 package com.pivotal.jishah.pwsspringbootdemo.dao;
 
 import com.pivotal.jishah.pwsspringbootdemo.model.Employee;
+import com.pivotal.jishah.pwsspringbootdemo.model.EmployeeDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,4 +22,6 @@ public interface EmployeeDao {
      * @return
      */
     public List<Employee> getAllEmployees();
+
+    public Employee save(EmployeeDto employee);
 }
