@@ -13,8 +13,7 @@ cf restage <APP_NAME>
 #### Concourse pipeline
 We have used Concourse to implement CI/CD. Below are the steps that you need to carry out in order to deploy this on concourse. 
  
-1. Download the docker file to start the concourse UI on local machine <br />
-wget https://raw.githubusercontent.com/starkandwayne/concourse-tutorial/master/docker-compose.yml <br />
+1. Run Concourse on local
 docker-compose up -d
 
 2. Login to: http://127.0.0.1:8080/
@@ -30,7 +29,7 @@ fly --target tutorial login --concourse-url http://127.0.0.1:8080 -u <user> -p <
 fly --target tutorial sync
 
 6. Create pipeline using the below command <br /> 
-fly -t tutorial set-pipeline -c pipeline.yml -p pwd-spring-boot-demo -l credential.yml
+fly -t tutorial set-pipeline -c pipeline.yml -p pwd-spring-boot-demo --load-vars-from ~/credentials.yml
 
 The pipeline looks like below:
 
