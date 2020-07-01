@@ -25,7 +25,8 @@ public class EmployeeService {
 
     @GetMapping("/employees")
     public List<Employee> findAllEmployees() {
-        return employeeDao.getAllEmployees();
+        List<Employee> employees = employeeDao.getAllEmployees();
+        return employees;
     }
 
     @PostMapping("/employees")

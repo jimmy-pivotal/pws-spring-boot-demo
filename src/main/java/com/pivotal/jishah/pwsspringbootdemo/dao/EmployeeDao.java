@@ -14,14 +14,14 @@ public interface EmployeeDao {
      * @param Employee ID to be fetched
      * @return Employee object
      */
-    public Optional<Employee> getEmployee(int employeeId);
+    Optional<Employee> getEmployee(int employeeId);
 
     /**
      * Fetch all employees from the database. If the list grows, one can use {@link org.springframework.data.domain.Page} to get a paginated response
      *
      * @return
      */
-    public List<Employee> getAllEmployees();
+    List<Employee> getAllEmployees();
 
-    public Employee save(EmployeeDto employee);
+    Employee save(EmployeeDto employee);
 }
