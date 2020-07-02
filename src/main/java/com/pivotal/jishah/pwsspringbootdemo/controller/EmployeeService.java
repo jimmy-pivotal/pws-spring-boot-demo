@@ -4,6 +4,7 @@ import com.pivotal.jishah.pwsspringbootdemo.dao.EmployeeDao;
 import com.pivotal.jishah.pwsspringbootdemo.model.Employee;
 import com.pivotal.jishah.pwsspringbootdemo.model.EmployeeDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,9 @@ import java.util.Optional;
 
 @RestController
 public class EmployeeService {
+
+    @Value("${name}")
+    private String propertyName;
 
     @Autowired
     private EmployeeDao employeeDao;
@@ -27,6 +31,16 @@ public class EmployeeService {
     public List<Employee> findAllEmployees() {
         List<Employee> employees = employeeDao.getAllEmployees();
         return employees;
+    }
+
+    @GetMapping("/name")
+    public String getName() {
+        return "Hello";
+    }
+
+    @GetMapping("/propertyName")
+    public String getPropertyName() {
+        return propertyName;
     }
 
     @PostMapping("/employees")
